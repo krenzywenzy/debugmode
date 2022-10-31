@@ -51,7 +51,7 @@ AHP.BorderColor3 = Color3.fromRGB(0, 0, 0)
 AHP.Position = UDim2.new(-0.00505050505, 0, 0.370716512, 0)
 AHP.Size = UDim2.new(0, 200, 0, 50)
 AHP.Font = Enum.Font.SourceSans
-AHP.Text = "0"
+AHP.Text = game.Players.LocalPlayer.Character.Humanoid.MaxHealth
 AHP.TextColor3 = Color3.fromRGB(255, 255, 255)
 AHP.TextScaled = true
 AHP.TextSize = 14.000
@@ -65,7 +65,7 @@ MHPLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 MHPLabel.Position = UDim2.new(0, 0, 0.526479721, 0)
 MHPLabel.Size = UDim2.new(0, 200, 0, 50)
 MHPLabel.Font = Enum.Font.SourceSans
-MHPLabel.Text = "Active HP"
+MHPLabel.Text = "Max HP"
 MHPLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 MHPLabel.TextScaled = true
 MHPLabel.TextSize = 14.000
@@ -79,17 +79,17 @@ MHP.BorderColor3 = Color3.fromRGB(0, 0, 0)
 MHP.Position = UDim2.new(0, 0, 0.713395655, 0)
 MHP.Size = UDim2.new(0, 200, 0, 50)
 MHP.Font = Enum.Font.SourceSans
-MHP.Text = "0"
+MHP.Text = game.Players.LocalPlayer.Character.Humanoid.MaxHealth
 MHP.TextColor3 = Color3.fromRGB(255, 255, 255)
 MHP.TextScaled = true
 MHP.TextSize = 14.000
 MHP.TextWrapped = true
 
-local h = game.Players.LocalPlayer.Character.Humanoid.Health
-local mh = game.Players.LocalPlayer.Character.Humanoid.MaxHealth
-h.Changed:Connect(function(property)
-    AHP.Text = h[property]
-end)
-mh.Changed:Connect(function(property)
-    MHP.Text = h[property]
+local h = game.Players.LocalPlayer.Character.Humanoid
+h.Changed:Connect(function(p)
+    if p == "Health" then
+      AHP.Text = h[p]
+    elseif p == "MaxHealth" then
+      MHP.Text = h[p]
+    end
 end)
