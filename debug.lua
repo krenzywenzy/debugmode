@@ -6,7 +6,6 @@ local AHP = Instance.new("TextLabel")
 local MHPLabel = Instance.new("TextLabel")
 local MHP = Instance.new("TextLabel")
 
---Properties:
 
 ScreenGui.Parent = game.CoreGui
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -89,8 +88,8 @@ MHP.TextWrapped = true
 local h = game.Players.LocalPlayer.Character.Humanoid.Health
 local mh = game.Players.LocalPlayer.Character.Humanoid.MaxHealth
 h.Changed:Connect(function(property)
-    AHP.Text(h[property])
+    AHP.Text = h[property]
 end)
 mh.Changed:Connect(function(property)
-    MHP.Text(h[property])
+    MHP.Text = h[property]
 end)
