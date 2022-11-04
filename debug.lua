@@ -103,7 +103,7 @@ WK.BackgroundTransparency = 1.000
 WK.Position = UDim2.new(0, 0, 0.891967058, 0)
 WK.Size = UDim2.new(0, 214, 0, 41)
 WK.Font = Enum.Font.SciFi
-WK.Text = WeaponKey.Key 
+WK.Text = WeaponKey.Key
 WK.TextColor3 = Color3.fromRGB(255, 255, 255)
 WK.TextScaled = true
 WK.TextSize = 14.000
@@ -119,9 +119,9 @@ h.Changed:Connect(function(p)
     end
 end)
 
-local h = WeaponKey
-h.Changed:Connect(function(p)
+local hh = WeaponKey
+hh.Changed:Connect(function(pp)
     if p == "Key" then
-      WK.Text = h[p]
+      WK.Text = hh[pp]
     end
 end)
