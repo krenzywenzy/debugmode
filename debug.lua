@@ -121,5 +121,5 @@ h.Changed:Connect(function(p)
 end)
 
 vv.Changed:Connect(function(NewValue)
-    WK.Text = vv
+    WK.Text = NewValue
 end)
