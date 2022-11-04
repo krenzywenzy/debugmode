@@ -120,9 +120,6 @@ h.Changed:Connect(function(p)
     end
 end)
 
-local hh = WeaponKey
-hh.Changed:Connect(function(pp)
-    if pp == "Key" then
-      WK.Text = hh[pp]
-    end
+vv.Changed:Connect(function(NewValue)
+    WK.Text = vv
 end)
