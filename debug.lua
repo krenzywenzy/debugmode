@@ -96,6 +96,7 @@ WKLabel.TextSize = 14.000
 WKLabel.TextWrapped = true
 
 local WeaponKey = require(game.Players.LocalPlayer.PlayerGui.Weapons.WeaponKey)
+local vv = tostring(WeaponKey.Key)
 WK.Name = "WK"
 WK.Parent = Frame
 WK.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -103,7 +104,7 @@ WK.BackgroundTransparency = 1.000
 WK.Position = UDim2.new(0, 0, 0.891967058, 0)
 WK.Size = UDim2.new(0, 214, 0, 41)
 WK.Font = Enum.Font.SciFi
-WK.Text = WeaponKey.Key
+WK.Text = vv
 WK.TextColor3 = Color3.fromRGB(255, 255, 255)
 WK.TextScaled = true
 WK.TextSize = 14.000
@@ -121,7 +122,7 @@ end)
 
 local hh = WeaponKey
 hh.Changed:Connect(function(pp)
-    if p == "Key" then
+    if pp == "Key" then
       WK.Text = hh[pp]
     end
 end)
