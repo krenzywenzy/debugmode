@@ -29,8 +29,6 @@ end
 game:GetService("UserInputService").InputBegan:connect(onKeyPress)
 game:GetService("UserInputService").InputBegan:connect(onKeyPress)
 
-
-
 local pName = game.Players.LocalPlayer.Name
 local plr
 for i,v in pairs(game.Workspace.Level.Flags:GetChildren()) do
