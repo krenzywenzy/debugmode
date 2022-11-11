@@ -29,8 +29,15 @@ end
 game:GetService("UserInputService").InputBegan:connect(onKeyPress)
 game:GetService("UserInputService").InputBegan:connect(onKeyPress)
 
-local plrn = game.Players.LocalPlayer.Name
-local arm = game.Workspace.Level.Flags.plrn.Armed
+local plrn = game.Players.LocalPlayer.Name 
+local pflag 
+for i,v in pairs(game.Workspace.Level.Flags:GetChildren()) do 
+    if v.Name == plrname then 
+        pflag = v 
+    end
+end
+local arm = pflag.Armed 
 local newa = arm:Clone()
 arm:Destroy()
-newa.Parent = game.Workspace.Level.Flags.plrn
+newa.Parent = pflag 
+
