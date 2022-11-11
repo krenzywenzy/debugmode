@@ -40,6 +40,5 @@ for i,v in pairs(game.Workspace.Level.Flags:GetChildren()) do
 end
 local arm = plr.Armed 
 local clone = arm:Clone()
-local arm:Destroy()
+arm:Destroy()
 clone.Parent = plr
-
