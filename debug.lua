@@ -8,6 +8,9 @@ local MHP = Instance.new("TextLabel")
 local WKLabel = Instance.new("TextLabel")
 local WK = Instance.new("TextLabel")
 
+local keyval = Instance.new("StringValue")
+keyval.Value = "nil"
+
 DebugMenu.Name = "DebugMenu"
 DebugMenu.Parent = game.CoreGui
 DebugMenu.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -120,6 +123,11 @@ h.Changed:Connect(function(p)
     end
 end)
 
-vv.Changed:Connect(function(NewValue)
-    WK.Text = NewValue
+local function CheckKey()
+  keyval.Value = tostring(vv)
+end
+game:GetService("RunService").Stepped:Connect(CheckKey)
+
+keyval.Changed:Connect(function(NewValue)
+    WK.Text = keyval.Value
 end)
