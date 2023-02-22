@@ -114,13 +114,14 @@ WK.TextSize = 14.000
 WK.TextWrapped = true
 
 
+
 local h = game.Players.LocalPlayer.Character.Humanoid
 h.Changed:Connect(function(p)
-    if p == "Health" then
-      AHP.Text = h[p]
-    elseif p == "MaxHealth" then
-      MHP.Text = h[p]
-    end
+  if p == "Health" then
+    AHP.Text = h[p]
+  elseif p == "MaxHealth" then
+    MHP.Text = h[p]
+  end
 end)
 
 local function CheckKey()
@@ -129,5 +130,5 @@ end
 game:GetService("RunService").Stepped:Connect(CheckKey)
 
 keyval.Changed:Connect(function(NewValue)
-    WK.Text = keyval.Value
+  WK.Text = keyval.Value
 end)
